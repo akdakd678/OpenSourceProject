@@ -73,8 +73,15 @@ create table announce(
 insert into announce values('A1','관리자1','사이트 오픈 했습니다','이용 규칙 잘 준수해주시기 바랍니다');
 insert into announce values('A2','관리자2','운영정책','욕설,비속어,인격모독 등 비매너 행위 적발시 무통보 제재');
 
-select * from announce;
-    
+create table message(
+     mno varchar2(4) not null primary key,
+     detail varchar2(100) not null,
+     send varchar2(20) not null,
+     geted varchar2(20) not null
+     );
+insert into message values('M1','에어팟 상태 좋나요?','강빈','유성');    
+insert into message values('M2','패딩 사진좀 보여주세요','현석','춘복');  
+insert into message values('M3','택배비 별도 인가요?','춘복','만식');
     
 
 
