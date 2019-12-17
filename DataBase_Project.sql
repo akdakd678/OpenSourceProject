@@ -22,6 +22,7 @@ insert into Customer정보 values('ggg123','충청남도 보령시 명천동','7
 
 
 
+
 create table Manager정보 (
      mid varchar2(10) not null primary key,
      address varchar2(80) not null,
@@ -49,6 +50,7 @@ insert into Sell values('S3','지우','2019/12/05','책상','하자없습니다.
 
 
 create table Review(
+    
     rno varchar2(5) not null primary key,
     stars number(2) not null,
     title varchar2(30) not null,
@@ -56,11 +58,12 @@ create table Review(
     seller varchar2(10) not null,
     buyer varchar2(10) not null,
     sno varchar2(5),
-    foreign key(sno) references Sell(sno)
-    );
     
+    );
 insert into Review values('R1','5','좋네요','잘쓸게요','유성','강빈');
 insert into Review values('R2','1','책상 하자 있네요','못 쓸 정도 입니다','지우','현석');
+
+
 
 
 create table announce(
@@ -82,6 +85,27 @@ create table message(
 insert into message values('M1','에어팟 상태 좋나요?','강빈','유성');    
 insert into message values('M2','패딩 사진좀 보여주세요','현석','춘복');  
 insert into message values('M3','택배비 별도 인가요?','춘복','만식');
+
+create table reportt(
+     rpno varchar2(4) not null primary key,
+     writer varchar2(10) not null,
+     title varchar2(30) not null,
+     detail varchar2(50) not null,
+     
+     );
+insert into reportt values('RP1','춘복','만식 사기꾼 입니다','선 입금후에 물건을 안보냅니다.'); 
+
+
+
+
+
+     
+
+
+
+
+
+    
     
 
 
