@@ -51,17 +51,20 @@ insert into Sell values('S3','지우','2019/12/05','책상','하자없습니다.
 
 create table Review(
     
-    rno varchar2(5) not null primary key,
-    stars number(2) not null,
+    rno varchar2(6) not null primary key,
+    stars number(4) not null,
     title varchar2(30) not null,
-    detail varchar2(100) not null,
+    detail varchar2(50) not null,
     seller varchar2(10) not null,
     buyer varchar2(10) not null,
-    sno varchar2(5),
+    sno varchar2(10),
+    foreign key(sno) references Sell(sno)
     
-    );
-insert into Review values('R1','5','좋네요','잘쓸게요','유성','강빈');
-insert into Review values('R2','1','책상 하자 있네요','못 쓸 정도 입니다','지우','현석');
+     );
+insert into Review values('R1','5','좋네요','잘쓸게요','유성','강빈','S1');
+insert into Review values('R2','1','책상 하자 있네요','못 쓸 정도 입니다','지우','현석','S3');
+
+select * from Review;
 
 
 
@@ -93,7 +96,9 @@ create table reportt(
      detail varchar2(50) not null,
      
      );
-insert into reportt values('RP1','춘복','만식 사기꾼 입니다','선 입금후에 물건을 안보냅니다.'); 
+insert into reportt values('RP1','춘복','만식 사기꾼 입니다','선 입금후에 물건을 안보냅니다.');
+
+
 
 
 
