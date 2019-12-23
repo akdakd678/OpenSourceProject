@@ -23,6 +23,8 @@ insert into Customer정보 values('ggg123','충청남도 보령시 명천동','7
 
 
 
+
+
 create table Manager정보 (
      mid varchar2(10) not null primary key,
      address varchar2(80) not null,
@@ -31,7 +33,11 @@ create table Manager정보 (
      nickname varchar2(20) not null
      );
 insert into Manager정보 values('qwe111','경상남도 양산시 소주동','111111','김남준','관리자1');
-insert into Manager정보 values('qwe222','경기도 하남시 초이동','222222','이성욱','관리자2');   
+insert into Manager정보 values('qwe222','경기도 하남시 초이동','222222','이성욱','관리자2');  
+
+
+
+
 
 
 
@@ -49,8 +55,10 @@ insert into Sell values('S2','춘복','2019/11/20','데쌍트 패딩','거의 �
 insert into Sell values('S3','지우','2019/12/05','책상','하자없습니다.택배비 포함','20000');
 
 
+
+
+
 create table Review(
-    
     rno varchar2(6) not null primary key,
     stars number(4) not null,
     title varchar2(30) not null,
@@ -64,7 +72,9 @@ create table Review(
 insert into Review values('R1','5','좋네요','잘쓸게요','유성','강빈','S1');
 insert into Review values('R2','1','책상 하자 있네요','못 쓸 정도 입니다','지우','현석','S3');
 
-select * from Review;
+
+
+
 
 
 
@@ -79,6 +89,12 @@ create table announce(
 insert into announce values('A1','관리자1','사이트 오픈 했습니다','이용 규칙 잘 준수해주시기 바랍니다');
 insert into announce values('A2','관리자2','운영정책','욕설,비속어,인격모독 등 비매너 행위 적발시 무통보 제재');
 
+
+
+
+
+
+
 create table message(
      mno varchar2(4) not null primary key,
      detail varchar2(100) not null,
@@ -89,20 +105,40 @@ insert into message values('M1','에어팟 상태 좋나요?','강빈','유성')
 insert into message values('M2','패딩 사진좀 보여주세요','현석','춘복');  
 insert into message values('M3','택배비 별도 인가요?','춘복','만식');
 
+
+
+
+
+
+
 create table reportt(
      rpno varchar2(4) not null primary key,
      writer varchar2(10) not null,
+     rdate varchar2(20) not null,
      title varchar2(30) not null,
-     detail varchar2(50) not null,
+     detail varchar2(50) not null
      
      );
-insert into reportt values('RP1','춘복','만식 사기꾼 입니다','선 입금후에 물건을 안보냅니다.');
+insert into reportt values('RP1','춘복','2019/12/15','만식 사기꾼 입니다','선 입금후에 물건을 안보냅니다.');
+
+
+select * from announce;
+
+select * from customer정보;
+
+select * from manager정보;
+
+select * from message;
+
+select * from review;
+
+select * from sell;
+
+select * from reportt;
 
 
 
-
-
-
+ 
 
      
 
