@@ -173,7 +173,7 @@ select stars,title,detail from Review
 where buyer='강빈';
 
 --16.작성자가 '춘복'인 신고게시글의 날짜,제목,내용을 검색하시오.
-select title,detail content rdate from reportt 
+select title,detail  from reportt 
 where writer='춘복';
 
 
