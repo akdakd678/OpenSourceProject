@@ -4,14 +4,16 @@ DEFAULT TABLESPACE users
 
 grant connect, resource, create session, create view to C##cs;
 
+--회원 테이블
 create table Customer정보(
     cid varchar2(20) not null primary key,
     address varchar2(80) not null,
     pw varchar2(20) not null,
     names varchar2(10) not null,
     nickname varchar2(20) not null
-    
     );
+    
+    
 insert into Customer정보 values('aaa123','대구 북구 노원동','1111','조유성','유성');
 insert into Customer정보 values('bbb123','부산 진구 양정동','2222','이춘복','춘복');
 insert into Customer정보 values('ccc123','경기도 구리시 동구동','3333','김현석','현석');
@@ -24,7 +26,7 @@ insert into Customer정보 values('ggg123','충청남도 보령시 명천동','7
 
 
 
-
+--관리자 테이블
 create table Manager정보 (
      mid varchar2(10) not null primary key,
      address varchar2(80) not null,
@@ -41,7 +43,7 @@ insert into Manager정보 values('qwe222','경기도 하남시 초이동','22222
 
 
 
-
+--판매게시글 테이블
 create table Sell(
     sno varchar2(5) not null primary key,
     nickname varchar2(20) not null,
@@ -57,7 +59,7 @@ insert into Sell values('S3','지우','2019/12/05','책상','하자없습니다.
 
 
 
-
+--리뷰글 테이블
 create table Review(
     rno varchar2(6) not null primary key,
     stars number(4) not null,
@@ -78,7 +80,7 @@ insert into Review values('R2','1','책상 하자 있네요','못 쓸 정도 입
 
 
 
-
+--공지글 테이블
 create table announce(
     ano varchar2(5) not null primary key,
     writer varchar2(20) not null,
@@ -94,7 +96,7 @@ insert into announce values('A2','관리자2','운영정책','욕설,비속어,�
 
 
 
-
+--메시지 테이블
 create table message(
      mno varchar2(4) not null primary key,
      detail varchar2(100) not null,
@@ -110,7 +112,7 @@ insert into message values('M3','택배비 별도 인가요?','춘복','만식')
 
 
 
-
+--신고게시글 테이블
 create table reportt(
      rpno varchar2(4) not null primary key,
      writer varchar2(10) not null,
@@ -121,22 +123,25 @@ create table reportt(
      );
 insert into reportt values('RP1','춘복','2019/12/15','만식 사기꾼 입니다','선 입금후에 물건을 안보냅니다.');
 
---1.공지글의 정보를 검색하시오.
+
+
+
+--3.공지글의 정보를 검색하시오.
 select * from announce;
 
---2.회원의 정보를 검색하시오.
+--1.회원의 정보를 검색하시오.
 select * from customer정보;
 
---3.관리자의 정보를 검색하시오.
+--2.관리자의 정보를 검색하시오.
 select * from manager정보;
 
 --4.회원들간에 주고받은 메시지의 내역을 검색하시오.
 select * from message;
 
---5.리뷰글의 정보를 검색하시오.
+--6.리뷰글의 정보를 검색하시오.
 select * from review;
 
---6.판매글의 정보를 검색하시오.
+--5.판매글의 정보를 검색하시오.
 select * from sell;
 
 --7.신고게시글의 정보를 검색하시오.
@@ -198,9 +203,9 @@ set address=' 부산 광역시 사하구', nickname='원빈'
 where names='이춘복';
 
 --22.닉네임이 '관리자1'인 관리자의 주소를 '충청남도 서산'으로 바꾸고 닉네임을 '운영자'로 수정하시오.
-update Manager정보;
+update Manager정보
 set address='충청남도 서산', nickname='운영자'
-where nickname='관리자1'
+where nickname='관리자1';
 
 
 --23.회원정보에 '이정수'라는 이름의 회원을 새로 추가하시오.
@@ -215,6 +220,21 @@ delete from Customer정보 where names='박지우';
 --26.관리자정보에 '김남준'이라는 이름의 관리자를 삭제하시오.
 delete from Manager정보 where names='김남준';
 
+--27.전북에 거주하고 있는 회원들을 검색하시오.
+select * from Customer정보
+where address LIKE '부산%';
+
+--28.경기도에 거주하고 있는 관리자들을 검색하시오.
+select * from Manager정보
+where address LIKE '경기도%';
+
+--29.관리자들의 정보를 이름순으로 나열하시오.
+select * from Manager정보
+order by names ASC;
+
+--30.김씨 성을 가진 관리자를 검색하시오.
+select * from Manager정보
+where names LIKE '김%';
 
  
 
