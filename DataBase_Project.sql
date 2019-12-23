@@ -156,7 +156,25 @@ where address = '대구 북구 노원동';
 select address,nickname from Manager정보
 where names= '김남준';
 
---12.
+--12. 보낸이의 닉네임이 '강빈'인 메시지의 내역을 검색하시오.
+select * from message
+where send='강빈';
+
+--13.작성자의 닉네임이 '춘복'인 판매글의 제목과 내용,가격을 검색하시오.
+select title,detail,price from Sell
+where nickname='춘복';
+
+--14.작성자의 닉네임이 '관리자2'인 공지글의 제목과 내용을 검색하시오.
+select title,detail from announce
+where writer='관리자2';
+
+--15.구매자의 닉네임이 '강빈'인 리뷰글의 별점,제목,내용을 검색하시오.
+select stars,title,detail from Review
+where buyer='강빈';
+
+--16.작성자가 '춘복'인 신고게시글의 날짜,제목,내용을 검색하시오.
+select title,detail content rdate from reportt 
+where writer='춘복';
 
 
 
