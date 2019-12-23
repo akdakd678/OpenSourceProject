@@ -176,6 +176,44 @@ where buyer='강빈';
 select title,detail  from reportt 
 where writer='춘복';
 
+--17.이씨 성을 가진 회원들의 정보를 검색하시오.
+select * from Customer정보
+where names LIKE '이%';
+
+--18.판매가격이 30000원 이상 60000원 이하인 판매글의 정보를 검색하시오.
+select * from Sell
+where price between 30000 and 60000;
+
+--19.별점이 5점이 아닌 리뷰글의 정보를 검색하시오.
+select * from Review
+where stars <> '5';
+
+--20.회원의 정보를 이름순으로 정렬하시오.
+select * from Customer정보
+order by names ASC;
+
+--21."이춘복"회원의 주소를 '부산 광역시 사하구'로 바꾸고 닉네임을 '원빈'으로 수정하시오.
+update Customer정보
+set address=' 부산 광역시 사하구', nickname='원빈'
+where names='이춘복';
+
+--22.닉네임이 '관리자1'인 관리자의 주소를 '충청남도 서산'으로 바꾸고 닉네임을 '운영자'로 수정하시오.
+update Manager정보;
+set address='충청남도 서산', nickname='운영자'
+where nickname='관리자1'
+
+
+--23.회원정보에 '이정수'라는 이름의 회원을 새로 추가하시오.
+insert into Customer정보 values('hhh123','부산진구 동평로','8888','이정수','정수')
+
+--24.관리자 정보에 '김현민'이라는 이름의 관리자를 새로 추가하시오.
+insert into Manager정보 values('qwe333','연제구 중앙대로','333333','김현민','관리자3')
+
+--25.회원정보에 '박지우'라는 이름의 회원을 삭제하시오.
+delete from Customer정보 where names='박지우';
+
+--26.관리자정보에 '김남준'이라는 이름의 관리자를 삭제하시오.
+delete from Manager정보 where names='김남준';
 
 
  
