@@ -121,20 +121,42 @@ create table reportt(
      );
 insert into reportt values('RP1','춘복','2019/12/15','만식 사기꾼 입니다','선 입금후에 물건을 안보냅니다.');
 
-
+--1.공지글의 정보를 검색하시오.
 select * from announce;
 
+--2.회원의 정보를 검색하시오.
 select * from customer정보;
 
+--3.관리자의 정보를 검색하시오.
 select * from manager정보;
 
+--4.회원들간에 주고받은 메시지의 내역을 검색하시오.
 select * from message;
 
+--5.리뷰글의 정보를 검색하시오.
 select * from review;
 
+--6.판매글의 정보를 검색하시오.
 select * from sell;
 
+--7.신고게시글의 정보를 검색하시오.
 select * from reportt;
+
+--8.회원들의 주소,이름을 검색하시오.
+select address,names from Customer정보;
+
+--9.관리자들의 주소,이름,닉네임을 검색하시오
+select address,names,nickname from Manager정보;
+
+--10.거주지가 대구 북구 노원동인 회원의 아이디와 닉네임을 검색하시오.
+select cid,nickname from Customer정보
+where address = '대구 북구 노원동';
+
+--11.이름이 김남준인 관리자의 거주지와 닉네임을 검색하시오.
+select address,nickname from Manager정보
+where names= '김남준';
+
+--12.
 
 
 
